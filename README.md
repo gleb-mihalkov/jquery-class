@@ -1,7 +1,51 @@
 # jQuery.Class
 
-*Добавляет базовую объектную модель в jQuery*.
+*Добавляет в jQuery ООП*.
 
-## Описание
+* [Домашняя страница](https://github.com/gleb-mihalkov/jquery-class);
 
-Библиотека написана под впечатлением от [BackboneJS](http://backbonejs.ru/) и в частности его объектной модели. Классы, созданные с помощью этой библиотеки полностью совместимы с Typescript, Coffeescript и BabelJS.
+* [Документация](https://gleb-mihalkov.github.io/jquery-class/).
+
+## Зависимости
+
+* [jQuery 2+](http://jquery.com/)
+
+## Использование
+
+```javascript
+// Подключаем зависимости...
+
+// Создаем класс.
+var ClassA = $.Class.extend({
+
+  methodA: function() {
+    console.log('Method A');
+  }
+});
+
+// Наследуем класс.
+var ClassB = ClassA.extend({
+  
+  // Можно явно объявить конструктор.
+  constructor: function() {
+    ClassA.apply(this, arguments);
+    console.log('Contructor B');
+  },
+  
+  methodB: function() {
+    console.log('Method B');
+  }
+});
+
+// Создадим миксин и добавим новому классу.
+var Mixin = {
+  methodM: function() { console.log('Method M'); }
+};
+
+var ClassC = ClassB.extend({
+  inherits: [Mixin]
+});
+
+// Можно также задать миксин вручную.
+ClassC.inherit(Mixin);
+```
