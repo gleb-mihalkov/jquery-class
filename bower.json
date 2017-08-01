@@ -1,0 +1,23 @@
+{
+  "name": "jquery-class",
+  "homepage": "https://github.com/gleb-mihalkov/jquery-class",
+  "authors": [
+    "gleb-mihalkov <gleb.mihalkov.work@yandex.ru>"
+  ],
+  "description": "Добавляет в jQuery ООП.",
+  "main": "dist/jquery.class.min.js",
+  "keywords": [
+    "jquery"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": ">=2.0.0"
+  }
+}
