@@ -5,7 +5,7 @@
     "gleb-mihalkov <gleb.mihalkov.work@yandex.ru>"
   ],
   "description": "Добавляет в jQuery ООП.",
-  "main": "dist/jquery.class.min.js",
+  "main": "dist/jquery.class.js",
   "keywords": [
     "jquery"
   ],

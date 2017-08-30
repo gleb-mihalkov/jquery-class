@@ -7,9 +7,11 @@
     "doc": "docs"
   },
   "scripts": {
-    "compress": "mkdir -p ./dist && uglifyjs src/*.js -m -o ./dist/jquery.class.min.js",
+    "compile_rename": "mkdir -p ./dist && cp src/*.js ./dist/jquery.class.js",
+    "compile_compress": "uglifyjs dist/*.js -m -o ./dist/jquery.class.min.js",
+    "compile": "npm run compile_rename && npm run compile_compress",
     "docs": "mkdir -p ./docs && jsdoc -r ./src -d ./docs -t ./node_modules/docdash --readme ./README.md",
-    "build": "npm run compress && npm run docs",
+    "build": "npm run compile && npm run docs",
     "test": "php -S localhost:8000",
     "docs_view": "php -S localhost:8000 -t ./docs"
   },
